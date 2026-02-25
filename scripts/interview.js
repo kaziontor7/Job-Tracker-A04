@@ -225,7 +225,7 @@ for(const del of deleted){
 //
 const interviewCld = interviewSection.children;
     for(const cld of interviewCld){
-  const interviewJobName = cld.childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[1].innerText;
+  const interviewJobName = cld.childNodes[1].childNodes[1].childNodes[1].childNodes[1].innerText;
   if(deleText==interviewJobName){
    cld.remove();
    countInter();

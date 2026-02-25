@@ -5,12 +5,28 @@ const rejectChild = rejectSection.children; rejectSection.addEventListener('clic
    
    // delete from Reject
 
-   if (e.target.parentElement.parentElement.classList.contains('delete') || e.target.parentElement.classList.contains('delete') ){
-        parent.parentElement.remove();
-        dashReject()
-        countReject()
+    if (e.target.parentElement.parentElement.classList.contains('delete') || e.target.parentElement.classList.contains('delete') ){
+      const rejectChildren = rejectSection.children;
+        for(const cld of rejectChildren){
+          const cardChild = allCards.children;
+         for(const child of cardChild){
+      if(child.childNodes[1].childNodes[1].childNodes[1].childNodes[1].innerText==cld.childNodes[1].childNodes[1].childNodes[1].childNodes[1].innerText){
+         console.log(true)
+         const childStatus = child.childNodes[1].childNodes[5];
+         childStatus.innerText='NOT APPLIED';
+      }
    }
 
+         //
+         if (parent== cld || parent.parentElement == cld){
+            cld.remove();
+         }
+       }
+        dashReject()
+        countReject()
+
+      
+   }
 
    if(interview == 'INTERVIEW'){
     const cardChild = allCards.children;

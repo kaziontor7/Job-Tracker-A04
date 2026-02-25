@@ -94,9 +94,24 @@ interviewSection.addEventListener('click',function(e){
    const parent = e.target.parentElement.parentElement.parentElement.parentElement;
    // delete from interview
    if (e.target.parentElement.parentElement.classList.contains('delete') || e.target.parentElement.classList.contains('delete') ){
-        parent.parentElement.remove();
+        for(const cld of interviewChild){
+          const cardChild = allCards.children;
+         for(const child of cardChild){
+      if(child.childNodes[1].childNodes[1].childNodes[1].childNodes[1].innerText==cld.childNodes[1].childNodes[1].childNodes[1].childNodes[1].innerText){
+         console.log(true)
+         const childStatus = child.childNodes[1].childNodes[5];
+         childStatus.innerText='NOT APPLIED';
+      }
+   }
+   //
+         if (parent== cld || parent.parentElement == cld){
+            cld.remove();
+         }
+       }
         dashInter()
         countInter()
+
+       
    }
 
 

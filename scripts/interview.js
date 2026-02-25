@@ -211,7 +211,7 @@ const deleted = document.getElementsByClassName('delete');
 for(const del of deleted){
    del.addEventListener('click',function(){
    const dele =  del.parentElement.parentElement.parentElement;
-   const deleText = del.parentElement.parentElement.childNodes[1].childNodes[1].innerText;
+   const deleText = del.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerText;
    //
    const rejectedCld = rejectSection.children;
     for(const cld of rejectedCld){
@@ -225,7 +225,7 @@ for(const del of deleted){
 //
 const interviewCld = interviewSection.children;
     for(const cld of interviewCld){
-  const interviewJobName = cld.childNodes[1].childNodes[1].childNodes[1].childNodes[1].innerText;
+  const interviewJobName = cld.childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[1].innerText;
   if(deleText==interviewJobName){
    cld.remove();
    countInter();

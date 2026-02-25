@@ -92,10 +92,15 @@ const interviewChild = interviewSection.children;
 interviewSection.addEventListener('click',function(e){
    const reject = e.target.innerText;
    const parent = e.target.parentElement.parentElement.parentElement.parentElement;
-   
+   // delete from interview
+   if (e.target.parentElement.parentElement.classList.contains('delete') || e.target.parentElement.classList.contains('delete') ){
+        parent.parentElement.remove();
+        dashInter()
+        countInter()
+   }
+
 
    //
-   
    if(reject == 'REJECTED'){
       const cardChild = allCards.children;
    for(const child of cardChild){
@@ -190,7 +195,7 @@ const deleted = document.getElementsByClassName('delete');
 
 for(const del of deleted){
    del.addEventListener('click',function(){
-   const dele =  del.parentElement.parentElement.parentElement.parentElement;
+   const dele =  del.parentElement.parentElement.parentElement;
    const deleText = del.parentElement.parentElement.childNodes[1].childNodes[1].innerText;
    //
    const rejectedCld = rejectSection.children;

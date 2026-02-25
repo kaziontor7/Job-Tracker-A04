@@ -3,6 +3,14 @@ const rejectChild = rejectSection.children; rejectSection.addEventListener('clic
    const interview = e.target.innerText;
    const parent = e.target.parentElement.parentElement.parentElement.parentElement;
    
+   // delete from Reject
+
+   if (e.target.parentElement.parentElement.classList.contains('delete') || e.target.parentElement.classList.contains('delete') ){
+        parent.parentElement.remove();
+        dashReject()
+        countReject()
+   }
+
 
    if(interview == 'INTERVIEW'){
     const cardChild = allCards.children;

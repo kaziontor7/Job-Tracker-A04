@@ -10,8 +10,7 @@ const rejectChild = rejectSection.children; rejectSection.addEventListener('clic
         for(const cld of rejectChildren){
           const cardChild = allCards.children;
          for(const child of cardChild){
-      if(child.childNodes[1].childNodes[1].childNodes[1].childNodes[1].innerText==cld.childNodes[1].childNodes[1].childNodes[1].childNodes[1].innerText){
-         console.log(true)
+       if(child.innerHTML==parent.innerHTML || child.innerHTML==parent.parentElement.innerHTML){
          const childStatus = child.childNodes[1].childNodes[5];
          childStatus.innerText='NOT APPLIED';
       }
